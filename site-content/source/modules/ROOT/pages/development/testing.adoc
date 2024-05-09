@@ -503,9 +503,6 @@ immediately available once the `virtualenv` is activated):
 [source,plaintext]
 ----
 ccm create test -n 1 --install-dir=/home/cassandra/cassandra
-ccm updateconf "enable_user_defined_functions: true"
-ccm updateconf "enable_scripted_user_defined_functions: true"
-ccm updateconf "cdc_enabled: true"
 ccm start --wait-for-binary-proto
 ----
 
@@ -535,10 +532,7 @@ cassandra@b69a382da7cd:~/cassandra/pylib$ ./cassandra-cqlsh-tests.sh /home/cassa
 ----
 
 As you noticed, if you have already built Cassandra, the previous method
-of running tests is much faster. Just remember that all the
-`ccm updateconf` calls must be aligned with the Cassandra version you
-are testing, with the supported features enabled. 
-Otherwise, Cassandra won’t start.
+of running tests is much faster.
 
 ==== Running selected tests
 
